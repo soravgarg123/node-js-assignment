@@ -1,0 +1,47 @@
+<%- include('../includes/header') %>
+
+<main>
+	<% if (errors.message) { %>
+	 	<div class="alert alert-danger" role="alert">
+		  <%= errors.message %>
+	    </div>
+	<% } %>
+	<% if (success.message) { %>
+	 	<div class="alert alert-success" role="alert">
+		  <%= success.message %>
+	    </div>
+	<% } %>
+    <form action="/signup" method="POST" novalidate>
+      <div class="form-group <%= errors.Name ? 'form-field-invalid' : '' %>">
+	    <label for="name">Name:</label>
+	    <input type="text" class="form-control" id="name" placeholder="Name" name="Name" requiredd value="<%= data.Name %>">
+	    <% if (errors.Name) { %>
+	      <div class="error"><%= errors.Name.msg %></div>
+	    <% } %>
+	  </div>
+	  <div class="form-group <%= errors.EmailID ? 'form-field-invalid' : '' %>">
+	    <label for="email">Email address:</label>
+	    <input type="email" class="form-control" id="email" placeholder="Email address" name="EmailID" required value="<%= data.EmailID %>">
+	    <% if (errors.EmailID) { %>
+	      <div class="error"><%= errors.EmailID.msg %></div>
+	    <% } %>
+	  </div>
+	  <div class="form-group <%= errors.Phone ? 'form-field-invalid' : '' %>">
+	    <label for="phone">Phone:</label>
+	    <input type="text" class="form-control" id="phone" placeholder="Phone" name="Phone" requiredd value="<%= data.Phone %>">
+	    <% if (errors.Phone) { %>
+	      <div class="error"><%= errors.Phone.msg %></div>
+	    <% } %>
+	  </div>
+	  <div class="form-group <%= errors.Password ? 'form-field-invalid' : '' %>">
+	    <label for="pwd">Password:</label>
+	    <input type="password" class="form-control" id="pwd" Placeholder="Password" name="Password" requiredd value="<%= data.Password %>">
+	    <% if (errors.Password) { %>
+	      <div class="error"><%= errors.Password.msg %></div>
+	    <% } %>
+	  </div>
+	  <button type="submit" class="btn btn-default">Sign Up</button>
+	</form>
+</main>
+
+<%- include('../includes/footer') %>

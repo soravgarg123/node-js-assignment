@@ -1,0 +1,4 @@
+RewriteEngine on
+RewriteRule ^\.env / [R,NC,L]
+RewriteRule ^index\.js / [R,NC,L]
+Options -Indexes

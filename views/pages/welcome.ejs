@@ -1,0 +1,30 @@
+<%- include('../includes/header') %>
+<main>
+	<% if (errors.message) { %>
+	 	<div class="alert alert-danger" role="alert">
+		  <%= errors.message %>
+	    </div>
+	<% } %>
+	<% if (success.message) { %>
+	 	<div class="alert alert-success" role="alert">
+		  <%= success.message %>
+	    </div>
+	<% } %>
+	<center>
+    	<h1>Welcome <%= data.Name %></h1>
+    	<br>
+    	<br>
+    	<p>Email ID: <%= data.EmailID %></p>
+    	<br>
+    	<br>
+    	<p>Phone: <%= data.Phone %></p>
+
+    	<br/>
+    	<br/>
+    	<a href="/logout" class="btn btn-success" onclick="return confirm('Are you sure want to log-out ?')">Logout</a>
+    	<br/>
+    	<br/>
+    </center>
+</main>
+
+<%- include('../includes/footer') %>
